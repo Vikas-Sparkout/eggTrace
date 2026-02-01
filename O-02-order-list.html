@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order List — eggTrace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
+
+  <!-- Top Bar -->
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
+          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right">
+          <p class="text-sm font-medium text-gray-700">Rajesh Kumar</p>
+          <p class="text-xs text-gray-500">Order Supervisor</p>
+        </div>
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center">
+          <span class="text-sm font-bold text-emerald-700">RK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+      <nav class="p-4 space-y-2">
+        <a href="index.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="I-02-intake-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <span class="font-medium">Intake</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Grading</p>
+        </div>
+        <a href="G-10-start-grade.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Start Grading</span>
+        </a>
+        <a href="G-11-active-grading-session.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="font-medium">Active Session</span>
+        </a>
+        <a href="G-14-grade-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Grade Close</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Orders</p>
+        </div>
+        <a href="O-01-order-entry.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+          <span class="font-medium">Order Entry</span>
+        </a>
+        <a href="O-02-order-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-50 to-transparent text-emerald-700 border-l-4 border-emerald-600 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          <span class="font-medium">Order List</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Packing</p>
+        </div>
+        <a href="P-01-packing-queue.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="font-medium">Packing Queue</span>
+        </a>
+        <a href="P-02-packing-job-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="font-medium">Create Packing Job</span>
+        </a>
+        <a href="P-03-packing-execution.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Execute Packing</span>
+        </a>
+        <a href="P-04-packing-job-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Close Packing Job</span>
+        </a>
+        <a href="P-05-packed-sku-stock.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+          </svg>
+          <span class="font-medium">Packed SKU Stock</span>
+        </a>
+
+        <a href="D-02-dispatch-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+          <span class="font-medium">Dispatch</span>
+        </a>
+        <a href="A-01-adjustment.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          <span class="font-medium">Adjustments</span>
+        </a>
+        <a href="M-01-masters-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+          <span class="font-medium">Masters</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Header -->
+      <div class="mb-6 flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">Order List</h2>
+          <p class="text-sm text-gray-500 mt-1">All order lines</p>
+        </div>
+        <a href="O-01-order-entry.html" class="inline-flex items-center px-5 py-2.5 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 active:scale-95 transition-all shadow-md shadow-emerald-600/20">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          New Order
+        </a>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-4 mb-6">
+        <div class="flex flex-wrap items-end gap-3">
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Plan Date From</label>
+            <input type="date" value="2024-01-10" class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Plan Date To</label>
+            <input type="date" value="2024-01-20" class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Location</label>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>All</option>
+              <option>Sri Krishna Traders</option>
+              <option>Vijay Eggs Mart</option>
+              <option>Metro Fresh Foods</option>
+              <option>Local Market Direct</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Category</label>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>All</option>
+              <option>Table Egg</option>
+              <option>Jumbo Egg</option>
+              <option>Pullet Egg</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Sub Category</label>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>All</option>
+              <option>Standard</option>
+              <option>Premium</option>
+              <option>Economy</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Status</label>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>All</option>
+              <option>Draft</option>
+              <option>Confirmed</option>
+              <option>Packing</option>
+              <option>Packed</option>
+              <option>Dispatched</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="px-4 py-2 bg-emerald-600 text-white font-semibold rounded-lg text-sm hover:bg-emerald-700 active:scale-95 transition-all shadow-sm">
+              Apply Filters
+            </button>
+            <button class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Info -->
+      <div class="mb-3">
+        <p class="text-sm text-gray-500">10 order lines</p>
+      </div>
+
+      <!-- Data Table -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Order Date</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Plan Date</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Orders</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Location</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Mfg Date</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Product Name</th>
+                <th class="px-3 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Order Pcs</th>
+                <th class="px-3 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Plan Pcs</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Pack</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Category</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Type</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Sub Category</th>
+                <th class="px-3 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Total Qty</th>
+                <th class="px-3 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Total Case</th>
+                <th class="px-3 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Plan Case</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Status</th>
+                <th class="px-3 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <!-- Row 1 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-10</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-12</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-151</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Sri Krishna Traders</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-12</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Table Egg 30pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">300</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">300</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">30 pcs Tray</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Standard</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">9,000</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">30</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">30</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-purple-100 text-purple-700">Dispatched</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-11</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-13</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-152</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Vijay Eggs Mart</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-13</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">White Table Egg 30pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">200</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">200</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">30 pcs Tray</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">White</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Standard</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">6,000</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">20</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">20</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-emerald-100 text-emerald-700">Packed</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-12</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-14</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-153</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Metro Fresh Foods</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-14</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Jumbo Egg 12pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">150</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">150</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">12 pcs Retail</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Jumbo Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Premium</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">1,800</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">8</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">8</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-amber-100 text-amber-700">Packing</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-13</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-15</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-154</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Local Market Direct</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-15</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Table Egg 30pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">400</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">350</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">30 pcs Tray</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Standard</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">12,000</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">40</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">35</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-amber-100 text-amber-700">Packing</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 5 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-14</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-155</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Sri Krishna Traders</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">White Table Egg 12pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">500</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">500</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">12 pcs Retail</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">White</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Economy</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">6,000</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">25</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">25</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-blue-100 text-blue-700">Confirmed</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 6 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-14</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-156</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Vijay Eggs Mart</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Table Egg 30pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">250</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">250</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">30 pcs Tray</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Standard</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">7,500</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">25</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">25</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-blue-100 text-blue-700">Confirmed</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 7 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-15</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-157</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Metro Fresh Foods</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Pullet Egg 6pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">600</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">400</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">6 pcs Retail</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Pullet Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Economy</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">3,600</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">20</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">14</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-blue-100 text-blue-700">Confirmed</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 8 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-15</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-158</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Sri Krishna Traders</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-16</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Table Egg 30pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">250</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">250</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">30 pcs Tray</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Standard</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">7,500</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">25</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">25</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-blue-100 text-blue-700">Confirmed</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 9 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-15</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-17</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-159</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Local Market Direct</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-17</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">White Table Egg 30pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">180</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">0</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">30 pcs Tray</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Table Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">White</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Standard</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">5,400</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">18</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">0</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 text-gray-700">Draft</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+              <!-- Row 10 -->
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-15</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-17</td>
+                <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-900">ORD-2024-160</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Vijay Eggs Mart</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">2024-01-17</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown Jumbo Egg 12pcs</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">100</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">0</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">12 pcs Retail</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Jumbo Egg</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Brown</td>
+                <td class="px-3 py-3 whitespace-nowrap text-gray-700">Premium</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums font-medium text-gray-900">1,200</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">5</td>
+                <td class="px-3 py-3 whitespace-nowrap text-right tabular-nums text-gray-900">0</td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 text-gray-700">Draft</span>
+                </td>
+                <td class="px-3 py-3 whitespace-nowrap">
+                  <a href="O-01-order-entry.html" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
