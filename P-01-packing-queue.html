@@ -9,9 +9,14 @@
 <body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
 
   <!-- Top Bar -->
-  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
-    <div class="flex items-center justify-between px-6 py-4">
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200 relative z-30">
+    <div class="flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
       <div class="flex items-center space-x-3">
+        <button onclick="toggleSidebar()" class="md:hidden p-1.5 -ml-1 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
         <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
@@ -19,11 +24,11 @@
         </div>
         <div>
           <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
-          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+          <p class="text-xs text-gray-500 hidden sm:block">Poultry Operations Platform</p>
         </div>
       </div>
-      <div class="flex items-center space-x-4">
-        <div class="text-right">
+      <div class="flex items-center space-x-3 md:space-x-4">
+        <div class="text-right hidden sm:block">
           <p class="text-sm font-medium text-gray-700">Rajesh Kumar</p>
           <p class="text-xs text-gray-500">Packing Supervisor</p>
         </div>
@@ -34,9 +39,12 @@
     </div>
   </div>
 
+  <!-- Sidebar Overlay -->
+  <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" onclick="toggleSidebar()"></div>
+
   <div class="flex">
     <!-- Sidebar -->
-    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+    <div id="sidebar" class="w-64 shrink-0 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen fixed md:relative inset-y-0 left-0 z-50 md:z-auto overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
       <nav class="p-4 space-y-2">
         <a href="index.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +155,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex-1 p-6">
+    <div class="flex-1 min-w-0 p-4 md:p-6">
       <!-- Page Header -->
       <div class="mb-6">
         <h2 class="text-2xl font-bold text-gray-900">Packing Queue</h2>
@@ -341,6 +349,21 @@
 
     </div>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      const isOpen = !sidebar.classList.contains('-translate-x-full');
+      if (isOpen) {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+      } else {
+        sidebar.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+      }
+    }
+  </script>
 
 </body>
 </html>
