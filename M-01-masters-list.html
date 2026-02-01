@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Data Hub — eggTrace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
+
+  <!-- Top Bar -->
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
+          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right">
+          <p class="text-sm font-medium text-gray-700">Rajesh Kumar</p>
+          <p class="text-xs text-gray-500">System Administrator</p>
+        </div>
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center">
+          <span class="text-sm font-bold text-emerald-700">RK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+            <nav class="p-4 space-y-2">
+        <a href="D-01-dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="I-02-intake-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <span class="font-medium">Intake</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Grading</p>
+        </div>
+        <a href="G-10-start-grade.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Start Grading</span>
+        </a>
+        <a href="G-11-active-grading-session.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="font-medium">Active Session</span>
+        </a>
+        <a href="G-14-grade-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Grade Close</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Packing</p>
+        </div>
+        <a href="P-01-packing-queue.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="font-medium">Packing Queue</span>
+        </a>
+        <a href="P-02-packing-job-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="font-medium">Create Packing Job</span>
+        </a>
+        <a href="P-03-packing-execution.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Execute Packing</span>
+        </a>
+        <a href="P-04-packing-job-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Close Packing Job</span>
+        </a>
+        <a href="P-05-packed-sku-stock.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+          </svg>
+          <span class="font-medium">Packed SKU Stock</span>
+        </a>
+
+        <a href="D-02-dispatch-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+          <span class="font-medium">Dispatch</span>
+        </a>
+        <a href="A-01-adjustment.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          <span class="font-medium">Adjustments</span>
+        </a>
+        <a href="M-01-masters-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-50 to-transparent text-emerald-700 border-l-4 border-emerald-600 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+          <span class="font-medium">Masters</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Header -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Master Data Hub</h2>
+        <p class="text-sm text-gray-500 mt-1">Manage system master data and configurations</p>
+      </div>
+
+      <!-- Master Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Area & Flock Master Card -->
+        <a href="M-02-area-flock-master.html" class="block bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6 hover:shadow-lg hover:ring-emerald-300 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-100/90 backdrop-blur-sm text-blue-800 ring-1 ring-blue-200">24 Active</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Area & Flock Master</h3>
+          <p class="text-sm text-gray-600 mb-4">Manage flock codes, farm zones, and production units</p>
+          <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Manage <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Brand Master Card -->
+        <a href="M-03-brand-master.html" class="block bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6 hover:shadow-lg hover:ring-emerald-300 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-purple-100/90 backdrop-blur-sm text-purple-800 ring-1 ring-purple-200">12 Brands</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Brand Master</h3>
+          <p class="text-sm text-gray-600 mb-4">Manage brand names assigned at packing stage</p>
+          <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Manage <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- SKU Master Card -->
+        <a href="M-04-sku-master.html" class="block bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6 hover:shadow-lg hover:ring-emerald-300 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200">47 SKUs</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">SKU Master</h3>
+          <p class="text-sm text-gray-600 mb-4">Configure SKUs that control packing math</p>
+          <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Manage <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Pack Config Master Card -->
+        <a href="M-05-pack-config-master.html" class="block bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6 hover:shadow-lg hover:ring-emerald-300 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-100/90 backdrop-blur-sm text-amber-800 ring-1 ring-amber-200">8 Configs</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Pack Config Master</h3>
+          <p class="text-sm text-gray-600 mb-4">Define pack sizes, egg counts, and case logic</p>
+          <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Manage <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Grade Type Master Card -->
+        <a href="M-06-grade-type-master.html" class="block bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6 hover:shadow-lg hover:ring-emerald-300 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200">8 Types</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Grade Type Master</h3>
+          <p class="text-sm text-gray-600 mb-4">Manage grade types for grading and packing source</p>
+          <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Manage <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Adjustment Reason Master Card -->
+        <a href="M-07-adjustment-reason-master.html" class="block bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6 hover:shadow-lg hover:ring-emerald-300 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-100/90 backdrop-blur-sm text-indigo-800 ring-1 ring-indigo-200">4 Reasons</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Adjustment Reason Master</h3>
+          <p class="text-sm text-gray-600 mb-4">Define adjustment reasons for stock corrections</p>
+          <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Manage <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Info Box -->
+      <div class="mt-8 bg-blue-50/90 backdrop-blur-sm border border-blue-200 rounded-xl p-5">
+        <div class="flex items-start space-x-3">
+          <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-blue-900">Operational Masters</p>
+            <p class="text-xs text-blue-700 mt-1">These masters control egg operations: intake, grading, packing, dispatch, and adjustments. Changes affect all downstream processes. Ensure data accuracy before saving.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

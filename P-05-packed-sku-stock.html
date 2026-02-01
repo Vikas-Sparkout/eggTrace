@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packed SKU Stock — eggTrace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
+
+  <!-- Top Bar -->
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
+          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right">
+          <p class="text-sm font-medium text-gray-700">Rajesh Kumar</p>
+          <p class="text-xs text-gray-500">Packing Supervisor</p>
+        </div>
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center">
+          <span class="text-sm font-bold text-emerald-700">RK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+            <nav class="p-4 space-y-2">
+        <a href="D-01-dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="I-02-intake-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <span class="font-medium">Intake</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Grading</p>
+        </div>
+        <a href="G-10-start-grade.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Start Grading</span>
+        </a>
+        <a href="G-11-active-grading-session.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="font-medium">Active Session</span>
+        </a>
+        <a href="G-14-grade-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Grade Close</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Packing</p>
+        </div>
+        <a href="P-01-packing-queue.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="font-medium">Packing Queue</span>
+        </a>
+        <a href="P-02-packing-job-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="font-medium">Create Packing Job</span>
+        </a>
+        <a href="P-03-packing-execution.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Execute Packing</span>
+        </a>
+        <a href="P-04-packing-job-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Close Packing Job</span>
+        </a>
+        <a href="P-05-packed-sku-stock.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-50 to-transparent text-emerald-700 border-l-4 border-emerald-600 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+          </svg>
+          <span class="font-medium">Packed SKU Stock</span>
+        </a>
+
+        <a href="D-02-dispatch-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+          <span class="font-medium">Dispatch</span>
+        </a>
+        <a href="A-01-adjustment.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          <span class="font-medium">Adjustments</span>
+        </a>
+        <a href="M-01-masters-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+          <span class="font-medium">Masters</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Header -->
+      <div class="mb-6 flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">Packed SKU Stock</h2>
+          <p class="text-sm text-gray-500 mt-1">View packed egg inventory generated from packing jobs</p>
+        </div>
+        <a href="P-02-packing-job-create.html" class="px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 active:scale-95 transition-all shadow-md shadow-emerald-600/20">
+          + Create Packing Job
+        </a>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-4 mb-6">
+        <div class="grid grid-cols-4 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-2">Brand</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>All Brands</option>
+              <option>Farm Fresh Select</option>
+              <option>Golden Harvest</option>
+              <option>EggXcellence</option>
+              <option>Nature's Best</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-2">Pack Size</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>All Pack Sizes</option>
+              <option>30 pcs Tray</option>
+              <option>12 pcs Retail</option>
+              <option>6 pcs Retail</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-2">Search SKU</label>
+            <input type="text" placeholder="Search by SKU name..." class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-2">Date Range</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+              <option>Last 90 days</option>
+              <option>All time</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stock Table -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-100/80 backdrop-blur-sm border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">SKU Name</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Brand</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Pack Size</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Egg Type</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Grade Type</th>
+                <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Available Packs</th>
+                <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Equivalent Eggs</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Last Packed</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Last Job Code</th>
+                <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <!-- Row 1 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-Table-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">Farm Fresh Select</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">250</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">7,500</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-28</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-044</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-Table-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-Table-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">Golden Harvest</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">180</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">5,400</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-28</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-043</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-Table-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-Premium-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">EggXcellence</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">420</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">5,040</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-27</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-041</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-Premium-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-Premium-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">Nature's Best</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">350</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">4,200</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-27</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-040</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-Premium-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-Table-6pcs</td>
+                <td class="px-4 py-3 text-gray-700">Farm Fresh Select</td>
+                <td class="px-4 py-3 text-gray-700">6 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">600</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">3,600</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-26</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-038</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-Table-6pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-Table-6pcs</td>
+                <td class="px-4 py-3 text-gray-700">Golden Harvest</td>
+                <td class="px-4 py-3 text-gray-700">6 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">480</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">2,880</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-26</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-037</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-Table-6pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 7 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-SuperGrade-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">EggXcellence</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Super Grade</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">140</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">4,200</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-25</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-035</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-SuperGrade-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 8 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-SuperGrade-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">Nature's Best</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Super Grade</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">95</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">2,850</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-25</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-034</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-SuperGrade-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 9 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-Premium-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">Farm Fresh Select</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">200</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">6,000</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-24</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-032</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-Premium-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 10 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-Premium-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">Golden Harvest</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">175</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">5,250</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-24</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-031</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-Premium-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 11 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-SuperGrade-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">EggXcellence</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Super Grade</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">300</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">3,600</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-23</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-028</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-SuperGrade-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 12 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-SuperGrade-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">Nature's Best</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Super Grade</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">220</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">2,640</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-23</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-027</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-SuperGrade-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 13 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-Table-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">Farm Fresh Select</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">520</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">6,240</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-22</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-025</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-Table-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 14 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-Table-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">Golden Harvest</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">410</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">4,920</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-22</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-024</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-Table-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 15 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-Premium-6pcs</td>
+                <td class="px-4 py-3 text-gray-700">EggXcellence</td>
+                <td class="px-4 py-3 text-gray-700">6 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">800</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">4,800</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-21</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-021</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-Premium-6pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 16 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-Premium-6pcs</td>
+                <td class="px-4 py-3 text-gray-700">Nature's Best</td>
+                <td class="px-4 py-3 text-gray-700">6 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">650</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">3,900</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-21</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-020</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-Premium-6pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 17 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Brown-SuperGrade-6pcs</td>
+                <td class="px-4 py-3 text-gray-700">Farm Fresh Select</td>
+                <td class="px-4 py-3 text-gray-700">6 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Brown</td>
+                <td class="px-4 py-3 text-gray-700">Super Grade</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">380</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">2,280</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-20</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-018</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Brown-SuperGrade-6pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 18 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">White-SuperGrade-6pcs</td>
+                <td class="px-4 py-3 text-gray-700">Golden Harvest</td>
+                <td class="px-4 py-3 text-gray-700">6 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Super Grade</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">290</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">1,740</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-20</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-017</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('White-SuperGrade-6pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 19 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Mixed-Table-30pcs</td>
+                <td class="px-4 py-3 text-gray-700">EggXcellence</td>
+                <td class="px-4 py-3 text-gray-700">30 pcs Tray</td>
+                <td class="px-4 py-3 text-gray-700">Mixed</td>
+                <td class="px-4 py-3 text-gray-700">Table Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">110</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">3,300</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-19</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-015</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Mixed-Table-30pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 20 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 font-medium text-gray-900">Mixed-Premium-12pcs</td>
+                <td class="px-4 py-3 text-gray-700">Nature's Best</td>
+                <td class="px-4 py-3 text-gray-700">12 pcs Retail</td>
+                <td class="px-4 py-3 text-gray-700">Mixed</td>
+                <td class="px-4 py-3 text-gray-700">Premium Eggs</td>
+                <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">280</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-700">3,360</td>
+                <td class="px-4 py-3 text-gray-700">2024-01-19</td>
+                <td class="px-4 py-3 text-gray-700">PJ-2401-014</td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end space-x-2">
+                    <button onclick="viewJobs('Mixed-Premium-12pcs')" class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">View Jobs</button>
+                    <a href="D-02-dispatch-execution.html" class="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md hover:bg-emerald-100 transition-colors">Use for Dispatch</a>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination (Mock) -->
+        <div class="border-t border-gray-200 bg-gray-50/80 backdrop-blur-sm px-6 py-4 flex items-center justify-between">
+          <div class="text-sm text-gray-600">
+            Showing <span class="font-semibold">20</span> of <span class="font-semibold">47</span> SKUs
+          </div>
+          <div class="flex space-x-2">
+            <button class="px-3 py-2 border-2 border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors">Previous</button>
+            <button class="px-3 py-2 bg-emerald-600 text-white font-medium rounded-md">1</button>
+            <button class="px-3 py-2 border-2 border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors">2</button>
+            <button class="px-3 py-2 border-2 border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors">3</button>
+            <button class="px-3 py-2 border-2 border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors">Next</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Mock for View Jobs -->
+  <div id="jobsModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+    <div class="bg-white/95 backdrop-blur-[2px] shadow-2xl ring-1 ring-gray-300 rounded-2xl p-6 max-w-3xl w-full mx-4">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold text-gray-900">Packing Jobs for <span id="modalSKU" class="text-emerald-600"></span></h3>
+        <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-100/80 backdrop-blur-sm border-b border-gray-200">
+            <tr>
+              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Job Code</th>
+              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Date</th>
+              <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase">Packs Produced</th>
+              <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase">Eggs Used</th>
+              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="px-4 py-3 font-medium text-gray-900">PJ-2401-044</td>
+              <td class="px-4 py-3 text-gray-700">2024-01-28</td>
+              <td class="px-4 py-3 text-right tabular-nums font-semibold">250</td>
+              <td class="px-4 py-3 text-right tabular-nums">7,650</td>
+              <td class="px-4 py-3">
+                <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-emerald-100/90 text-emerald-800 ring-1 ring-emerald-200">CLOSED</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-gray-900">PJ-2401-036</td>
+              <td class="px-4 py-3 text-gray-700">2024-01-25</td>
+              <td class="px-4 py-3 text-right tabular-nums font-semibold">180</td>
+              <td class="px-4 py-3 text-right tabular-nums">5,460</td>
+              <td class="px-4 py-3">
+                <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-emerald-100/90 text-emerald-800 ring-1 ring-emerald-200">CLOSED</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeModal()" class="px-6 py-2.5 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 active:scale-95 transition-all">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function viewJobs(sku) {
+      document.getElementById('modalSKU').textContent = sku;
+      document.getElementById('jobsModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('jobsModal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

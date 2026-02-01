@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Close Packing Job — eggTrace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
+
+  <!-- Top Bar -->
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
+          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right">
+          <p class="text-sm font-medium text-gray-700">Rajesh Kumar</p>
+          <p class="text-xs text-gray-500">Packing Supervisor</p>
+        </div>
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center">
+          <span class="text-sm font-bold text-emerald-700">RK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+            <nav class="p-4 space-y-2">
+        <a href="D-01-dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="I-02-intake-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <span class="font-medium">Intake</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Grading</p>
+        </div>
+        <a href="G-10-start-grade.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Start Grading</span>
+        </a>
+        <a href="G-11-active-grading-session.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="font-medium">Active Session</span>
+        </a>
+        <a href="G-14-grade-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Grade Close</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Packing</p>
+        </div>
+        <a href="P-01-packing-queue.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="font-medium">Packing Queue</span>
+        </a>
+        <a href="P-02-packing-job-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="font-medium">Create Packing Job</span>
+        </a>
+        <a href="P-03-packing-execution.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Execute Packing</span>
+        </a>
+        <a href="P-04-packing-job-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-50 to-transparent text-emerald-700 border-l-4 border-emerald-600 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Close Packing Job</span>
+        </a>
+        <a href="P-05-packed-sku-stock.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+          </svg>
+          <span class="font-medium">Packed SKU Stock</span>
+        </a>
+
+        <a href="D-02-dispatch-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+          <span class="font-medium">Dispatch</span>
+        </a>
+        <a href="A-01-adjustment.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          <span class="font-medium">Adjustments</span>
+        </a>
+        <a href="M-01-masters-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+          <span class="font-medium">Masters</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Header -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Close Packing Job</h2>
+        <p class="text-sm text-gray-500 mt-1">Supervisor reconciliation and job closure</p>
+      </div>
+
+      <!-- Success Banner Mock (hidden by default, shown after close) -->
+      <div id="successBanner" class="hidden mb-6 bg-emerald-50/90 backdrop-blur-sm border border-emerald-200 rounded-xl p-4">
+        <div class="flex items-start space-x-3">
+          <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-emerald-900">Packing Job Closed Successfully</p>
+            <p class="text-xs text-emerald-700 mt-1">SKU stock updated and available for Dispatch. Grade buffer deducted. Job archived.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Context Header Strip -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-4 mb-6">
+        <div class="grid grid-cols-4 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Job Code</label>
+            <p class="text-sm font-bold text-gray-900">PJ-2401-044</p>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Order Line</label>
+            <p class="text-sm font-bold text-gray-900">ORD-2024-158-L1</p>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Customer</label>
+            <p class="text-sm font-bold text-gray-900">Sri Krishna Traders</p>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Status</label>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-100/90 backdrop-blur-sm text-amber-800 ring-1 ring-amber-200">READY_TO_CLOSE</span>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Brand</label>
+            <p class="text-sm font-bold text-gray-900">Farm Fresh Select</p>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">SKU</label>
+            <p class="text-sm font-bold text-gray-900">Brown-Table-30pcs</p>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Grade Source</label>
+            <p class="text-sm font-bold text-gray-900">Table Eggs</p>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 mb-1">Planned Eggs</label>
+            <p class="text-sm font-bold text-gray-900 tabular-nums">7,500</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Left Column (2 cols) -->
+        <div class="col-span-2 space-y-6">
+
+          <!-- Pack Totals Summary -->
+          <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Pack Totals Summary</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-100/80 backdrop-blur-sm border-b border-gray-200">
+                  <tr>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Pack Size</th>
+                    <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Eggs/Pack</th>
+                    <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Packed</th>
+                    <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Rejected</th>
+                    <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Total Eggs Used</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="px-4 py-3 font-medium text-gray-900">30 pcs Tray</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-gray-700">30</td>
+                    <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">250</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-red-600">5</td>
+                    <td class="px-4 py-3 text-right tabular-nums font-bold text-gray-900">7,650</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="px-4 py-3 font-medium text-gray-900">12 pcs Retail</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-gray-700">12</td>
+                    <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">0</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-red-600">0</td>
+                    <td class="px-4 py-3 text-right tabular-nums font-bold text-gray-900">0</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="px-4 py-3 font-medium text-gray-900">6 pcs Retail</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-gray-700">6</td>
+                    <td class="px-4 py-3 text-right tabular-nums font-semibold text-gray-900">0</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-red-600">0</td>
+                    <td class="px-4 py-3 text-right tabular-nums font-bold text-gray-900">0</td>
+                  </tr>
+                  <tr class="bg-emerald-50/80 backdrop-blur-sm font-bold border-t-2 border-emerald-200">
+                    <td class="px-4 py-3 text-gray-900" colspan="2">TOTAL</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-emerald-900">250</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-red-700">5</td>
+                    <td class="px-4 py-3 text-right tabular-nums text-emerald-900">7,650</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Packing Reject & Variance -->
+          <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Packing Reject & Variance</h3>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Breakage (eggs)</label>
+                <input type="number" value="80" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium tabular-nums focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Damage (eggs)</label>
+                <input type="number" value="40" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium tabular-nums focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Shortage (eggs)</label>
+                <input type="number" value="30" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium tabular-nums focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Manual Adjustment (eggs)</label>
+                <input type="number" value="0" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium tabular-nums focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-gray-50 to-transparent rounded-lg p-4 border border-gray-200">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-gray-700">Planned Eggs:</span>
+                <span class="text-base font-bold text-gray-900 tabular-nums">7,500</span>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-gray-700">Actual Eggs Used:</span>
+                <span class="text-base font-bold text-gray-900 tabular-nums">7,650</span>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-gray-700">Total Rejects:</span>
+                <span class="text-base font-bold text-red-600 tabular-nums">150</span>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t-2 border-gray-300">
+                <span class="text-base font-bold text-gray-900">Computed Variance:</span>
+                <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-base font-bold bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 tabular-nums">+150 eggs</span>
+              </div>
+            </div>
+
+            <!-- Variance Warning Box -->
+            <div class="mt-4 bg-red-50/90 backdrop-blur-sm border border-red-200 rounded-lg p-4">
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <div class="flex-1">
+                  <p class="text-sm font-semibold text-red-900">Variance Detected</p>
+                  <p class="text-xs text-red-700 mt-1">Actual eggs consumed exceeds planned quantity by <strong>+150 eggs</strong>. Supervisor confirmation required to proceed with job closure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workforce & Notes -->
+          <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Workforce & Notes</h3>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Team</label>
+                <input type="text" value="Team B" readonly class="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg text-base font-medium">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Men Power</label>
+                <input type="number" value="4" readonly class="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg text-base font-medium tabular-nums">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Packing Line</label>
+                <input type="text" value="Line 2" readonly class="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg text-base font-medium">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Supervisor</label>
+                <input type="text" value="Rajesh Kumar" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Closure Notes</label>
+              <textarea rows="3" placeholder="Add notes about variance, quality, or any issues..." class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">Slight variance due to additional rejects found during quality check. Customer quality standards met.</textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column (1 col) -->
+        <div class="col-span-1">
+
+          <!-- Job Performance KPIs -->
+          <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Job Performance KPIs</h3>
+
+            <div class="space-y-4">
+              <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                <label class="block text-xs font-medium text-emerald-700 mb-1">Packing Yield %</label>
+                <p class="text-3xl font-bold text-emerald-900 tabular-nums">98.04%</p>
+                <p class="text-xs text-emerald-600 mt-1">7,500 good / 7,650 used</p>
+              </div>
+
+              <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                <label class="block text-xs font-medium text-red-700 mb-1">Reject %</label>
+                <p class="text-3xl font-bold text-red-900 tabular-nums">1.96%</p>
+                <p class="text-xs text-red-600 mt-1">150 rejects / 7,650 used</p>
+              </div>
+
+              <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <label class="block text-xs font-medium text-blue-700 mb-1">Eggs per Man-hour</label>
+                <p class="text-3xl font-bold text-blue-900 tabular-nums">319</p>
+                <p class="text-xs text-blue-600 mt-1">7,650 eggs / 4 men / 6 hrs</p>
+              </div>
+
+              <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <label class="block text-xs font-medium text-gray-700 mb-1">Job Duration</label>
+                <p class="text-3xl font-bold text-gray-900 tabular-nums">6.0 hrs</p>
+                <p class="text-xs text-gray-600 mt-1">Started: 08:30 AM<br>Paused: 11:45 - 12:30<br>Ended: 03:15 PM</p>
+              </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="mt-6 bg-blue-50/80 backdrop-blur-sm border border-blue-200 rounded-lg p-3">
+              <p class="text-xs text-blue-800 leading-relaxed">
+                <strong>On Job Close:</strong> Grade buffer will be deducted by 7,650 eggs. Packed SKU stock will be credited with 250 packs (30 pcs Tray).
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Action Bar -->
+      <div class="mt-6 bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-4 sticky bottom-6">
+        <div class="flex items-center justify-between">
+          <a href="P-03-packing-execution.html" class="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 active:scale-95 transition-all shadow-sm">
+            ← Back to Execution
+          </a>
+          <div class="flex items-center space-x-3">
+            <button class="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 active:scale-95 transition-all shadow-sm">
+              Save Draft
+            </button>
+            <button onclick="closeJob()" class="px-8 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 active:scale-95 transition-all shadow-md shadow-emerald-600/20">
+              Close Packing Job →
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function closeJob() {
+      // Show success banner
+      document.getElementById('successBanner').classList.remove('hidden');
+
+      // Scroll to top to see banner
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Optional: redirect to packed SKU stock after 2 seconds
+      setTimeout(() => {
+        // window.location.href = 'P-05-packed-sku-stock.html';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

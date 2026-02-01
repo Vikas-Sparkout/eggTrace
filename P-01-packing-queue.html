@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing Queue — eggTrace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
+
+  <!-- Top Bar -->
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
+          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right">
+          <p class="text-sm font-medium text-gray-700">Rajesh Kumar</p>
+          <p class="text-xs text-gray-500">Supervisor</p>
+        </div>
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center">
+          <span class="text-sm font-bold text-emerald-700">RK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+            <nav class="p-4 space-y-2">
+        <a href="D-01-dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="I-02-intake-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <span class="font-medium">Intake</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Grading</p>
+        </div>
+        <a href="G-10-start-grade.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Start Grading</span>
+        </a>
+        <a href="G-11-active-grading-session.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="font-medium">Active Session</span>
+        </a>
+        <a href="G-14-grade-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Grade Close</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Packing</p>
+        </div>
+        <a href="P-01-packing-queue.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-50 to-transparent text-emerald-700 border-l-4 border-emerald-600 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="font-medium">Packing Queue</span>
+        </a>
+        <a href="P-02-packing-job-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="font-medium">Create Packing Job</span>
+        </a>
+        <a href="P-03-packing-execution.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Execute Packing</span>
+        </a>
+        <a href="P-04-packing-job-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Close Packing Job</span>
+        </a>
+        <a href="P-05-packed-sku-stock.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+          </svg>
+          <span class="font-medium">Packed SKU Stock</span>
+        </a>
+
+        <a href="D-02-dispatch-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+          <span class="font-medium">Dispatch</span>
+        </a>
+        <a href="A-01-adjustment.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          <span class="font-medium">Adjustments</span>
+        </a>
+        <a href="M-01-masters-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+          <span class="font-medium">Masters</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <div class="mb-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">Packing Queue</h2>
+            <p class="text-sm text-gray-500 mt-1">Order lines eligible for packing</p>
+          </div>
+          <div class="text-right">
+            <p class="text-sm text-gray-500">Total Order Lines</p>
+            <p class="text-2xl font-bold text-gray-900">15</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-4 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Customer</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm">
+              <option value="">All Customers</option>
+              <option>Sri Krishna Traders</option>
+              <option>Lakshmi Enterprises</option>
+              <option>Venkat Distributors</option>
+              <option>Ramesh & Sons</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">SKU</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm">
+              <option value="">All SKUs</option>
+              <option>Brown-Table-30pcs</option>
+              <option>Brown-Table-6pcs</option>
+              <option>Brown-Jumbo-30pcs</option>
+              <option>White-Table-30pcs</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Grade Type</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm">
+              <option value="">All Grades</option>
+              <option>Table</option>
+              <option>Second Table</option>
+              <option>Jumbo</option>
+              <option>Pullet</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Priority</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm">
+              <option value="">All Priorities</option>
+              <option>High</option>
+              <option>Normal</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Search</label>
+            <input
+              type="text"
+              placeholder="Order line, customer..."
+              class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
+            >
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Main Table -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl overflow-hidden">
+
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-gray-100/80 backdrop-blur-sm border-b border-gray-200 sticky top-0">
+              <tr>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Order Line</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Customer</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">SKU</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Grade Type</th>
+                <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 uppercase">Order Pcs</th>
+                <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 uppercase">Eggs Needed</th>
+                <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 uppercase">Grade Buffer</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Priority</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Status</th>
+                <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+
+              <!-- Row 1 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-158-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Sri Krishna Traders</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">250</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">7,500</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 text-xs font-semibold rounded">High</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-157-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Lakshmi Enterprises</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-6pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">500</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">3,000</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 text-xs font-semibold rounded">High</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-156-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Venkat Distributors</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Jumbo-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Jumbo</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">100</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">3,000</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">1,500</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-155-L2</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Ramesh & Sons</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">180</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">5,400</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">QUEUED</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-154-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Anjali Poultry Mart</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-SecondTable-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Second Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">220</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">6,600</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">7,250</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 text-xs font-semibold rounded">High</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-153-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Priya Food Supplies</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-6pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">400</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">2,400</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-amber-100/90 backdrop-blur-sm text-amber-800 ring-1 ring-amber-200 text-xs font-semibold rounded">IN_PROGRESS</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-3 py-1.5 bg-gray-100 text-gray-500 rounded text-xs font-medium">In Progress</span>
+                </td>
+              </tr>
+
+              <!-- Row 7 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-152-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Kumar Egg Center</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Pullet-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Pullet</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">150</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">4,500</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">3,420</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">QUEUED</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 8 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-151-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Suresh Traders</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">300</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">9,000</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 text-xs font-semibold rounded">High</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 9 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-150-L2</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Meena Distributors</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Jumbo-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Jumbo</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">80</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">2,400</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">1,500</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 10 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-149-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Ganesha Egg Stores</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-SecondTable-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Second Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">200</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">6,000</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">7,250</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">QUEUED</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 11 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-148-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Arjun Wholesale</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-6pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">600</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">3,600</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 text-xs font-semibold rounded">High</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 12 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-147-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Balaji Eggs & Co</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">280</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">8,400</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">QUEUED</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 13 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-146-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Ravi Poultry Hub</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Pullet-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Pullet</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">120</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">3,600</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">3,420</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 14 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-145-L2</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Saraswati Traders</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-SecondTable-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Second Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">180</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">5,400</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">7,250</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-red-100/90 backdrop-blur-sm text-red-800 ring-1 ring-red-200 text-xs font-semibold rounded">High</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-emerald-100/90 backdrop-blur-sm text-emerald-800 ring-1 ring-emerald-200 text-xs font-semibold rounded">READY</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+              <!-- Row 15 -->
+              <tr class="hover:bg-emerald-50/30 transition-colors">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">ORD-2024-144-L1</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Dinesh Food Mart</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Brown-Table-30pcs</td>
+                <td class="px-4 py-3 text-sm text-gray-700">Table</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">350</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-gray-900">10,500</td>
+                <td class="px-4 py-3 text-sm text-right tabular-nums text-emerald-700 font-semibold">15,680</td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">Normal</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="px-2 py-1 bg-gray-100/90 backdrop-blur-sm text-gray-800 ring-1 ring-gray-200 text-xs font-semibold rounded">QUEUED</span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href="P-02-packing-job-create.html" class="px-3 py-1.5 text-emerald-700 border border-emerald-700 rounded hover:bg-emerald-50 transition text-xs font-medium">Create Job</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

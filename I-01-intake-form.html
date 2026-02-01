@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Intake Entry — eggTrace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-100 min-h-screen">
+
+  <!-- Top Bar -->
+  <div class="bg-white/95 backdrop-blur-[2px] shadow-md border-b border-gray-200">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">eggTrace</h1>
+          <p class="text-xs text-gray-500">Poultry Operations Platform</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right">
+          <p class="text-sm font-medium text-gray-700">Intake Clerk</p>
+          <p class="text-xs text-gray-500">Data Entry</p>
+        </div>
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center">
+          <span class="text-sm font-bold text-emerald-700">IC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white/95 backdrop-blur-[2px] shadow-md border-r border-gray-200 min-h-screen">
+            <nav class="p-4 space-y-2">
+        <a href="D-01-dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="I-02-intake-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-50 to-transparent text-emerald-700 border-l-4 border-emerald-600 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+          </svg>
+          <span class="font-medium">Intake</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Grading</p>
+        </div>
+        <a href="G-10-start-grade.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Start Grading</span>
+        </a>
+        <a href="G-11-active-grading-session.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="font-medium">Active Session</span>
+        </a>
+        <a href="G-14-grade-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Grade Close</span>
+        </a>
+
+        <div class="pt-4 pb-2 px-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Packing</p>
+        </div>
+        <a href="P-01-packing-queue.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="font-medium">Packing Queue</span>
+        </a>
+        <a href="P-02-packing-job-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="font-medium">Create Packing Job</span>
+        </a>
+        <a href="P-03-packing-execution.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Execute Packing</span>
+        </a>
+        <a href="P-04-packing-job-close.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="font-medium">Close Packing Job</span>
+        </a>
+        <a href="P-05-packed-sku-stock.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+          </svg>
+          <span class="font-medium">Packed SKU Stock</span>
+        </a>
+
+        <a href="D-02-dispatch-create.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+          <span class="font-medium">Dispatch</span>
+        </a>
+        <a href="A-01-adjustment.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          <span class="font-medium">Adjustments</span>
+        </a>
+        <a href="M-01-masters-list.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+          </svg>
+          <span class="font-medium">Masters</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Header -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">New Intake Entry</h2>
+        <p class="text-sm text-gray-500 mt-1">Create new batch intake record</p>
+      </div>
+
+      <!-- Form Card -->
+      <div class="bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl overflow-hidden">
+
+        <!-- Form Header -->
+        <div class="px-8 py-6 border-b border-gray-200 bg-gray-50">
+          <h3 class="text-lg font-semibold text-gray-800">Batch Information</h3>
+          <p class="text-sm text-gray-500 mt-1">Enter all required details for the intake batch</p>
+        </div>
+
+        <!-- Form Body -->
+        <form id="intakeForm" class="p-8">
+
+          <!-- Two Column Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+            <!-- Left Column -->
+            <div class="space-y-6">
+
+              <!-- Date -->
+              <div>
+                <label for="date" class="block text-sm font-medium text-gray-700 mb-2">
+                  Date <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  required
+                >
+              </div>
+
+              <!-- Farm -->
+              <div>
+                <label for="farm" class="block text-sm font-medium text-gray-700 mb-2">
+                  Farm <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="farm"
+                  name="farm"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Select farm</option>
+                  <option value="farm1">Sunrise Poultry Farm</option>
+                  <option value="farm2">Green Valley Farms</option>
+                  <option value="farm3">Golden Egg Enterprises</option>
+                  <option value="farm4">Mountain View Poultry</option>
+                </select>
+              </div>
+
+              <!-- Flock -->
+              <div>
+                <label for="flock" class="block text-sm font-medium text-gray-700 mb-2">
+                  Flock <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="flock"
+                  name="flock"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Select flock</option>
+                  <option value="flock1">FL-2024-A01</option>
+                  <option value="flock2">FL-2024-A02</option>
+                  <option value="flock3">FL-2024-B01</option>
+                  <option value="flock4">FL-2024-B02</option>
+                </select>
+              </div>
+
+              <!-- House Type -->
+              <div>
+                <label for="houseType" class="block text-sm font-medium text-gray-700 mb-2">
+                  House Type <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="houseType"
+                  name="houseType"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Select house type</option>
+                  <option value="cage">Cage System</option>
+                  <option value="freerange">Free Range</option>
+                  <option value="barn">Barn System</option>
+                  <option value="organic">Organic</option>
+                </select>
+              </div>
+
+              <!-- Egg Type -->
+              <div>
+                <label for="eggType" class="block text-sm font-medium text-gray-700 mb-2">
+                  Egg Type <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="eggType"
+                  name="eggType"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Select egg type</option>
+                  <option value="white">White Eggs</option>
+                  <option value="brown">Brown Eggs</option>
+                  <option value="organic">Organic Eggs</option>
+                  <option value="enriched">Enriched Eggs</option>
+                </select>
+              </div>
+
+              <!-- Bird Age -->
+              <div>
+                <label for="birdAge" class="block text-sm font-medium text-gray-700 mb-2">
+                  Bird Age (weeks) <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="number"
+                  id="birdAge"
+                  name="birdAge"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., 28"
+                  min="1"
+                  max="120"
+                  required
+                >
+              </div>
+
+              <!-- Area -->
+              <div>
+                <label for="area" class="block text-sm font-medium text-gray-700 mb-2">
+                  Area <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="area"
+                  name="area"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Select area</option>
+                  <option value="zoneA">Zone A</option>
+                  <option value="zoneB">Zone B</option>
+                  <option value="zoneC">Zone C</option>
+                  <option value="zoneD">Zone D</option>
+                </select>
+              </div>
+
+              <!-- Profile -->
+              <div>
+                <label for="profile" class="block text-sm font-medium text-gray-700 mb-2">
+                  Profile <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="profile"
+                  name="profile"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Select profile</option>
+                  <option value="standard">Standard</option>
+                  <option value="premium">Premium</option>
+                  <option value="economy">Economy</option>
+                  <option value="export">Export Quality</option>
+                </select>
+              </div>
+
+              <!-- Transfer Trays -->
+              <div>
+                <label for="transferTrays" class="block text-sm font-medium text-gray-700 mb-2">
+                  Transfer Trays <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="number"
+                  id="transferTrays"
+                  name="transferTrays"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., 250"
+                  min="1"
+                  required
+                  onchange="calculateInwardedEggs()"
+                >
+              </div>
+
+              <!-- Eggs per Tray -->
+              <div>
+                <label for="eggsPerTray" class="block text-sm font-medium text-gray-700 mb-2">
+                  Eggs per Tray <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="number"
+                  id="eggsPerTray"
+                  name="eggsPerTray"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  value="30"
+                  min="1"
+                  required
+                  onchange="calculateInwardedEggs()"
+                >
+              </div>
+
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-6">
+
+              <!-- Test Eggs -->
+              <div>
+                <label for="testEggs" class="block text-sm font-medium text-gray-700 mb-2">
+                  Test Eggs
+                </label>
+                <input
+                  type="number"
+                  id="testEggs"
+                  name="testEggs"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., 15"
+                  min="0"
+                  value="0"
+                  onchange="calculateInwardedEggs()"
+                >
+              </div>
+
+              <!-- Damage Eggs -->
+              <div>
+                <label for="damageEggs" class="block text-sm font-medium text-gray-700 mb-2">
+                  Damage Eggs
+                </label>
+                <input
+                  type="number"
+                  id="damageEggs"
+                  name="damageEggs"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., 8"
+                  min="0"
+                  value="0"
+                  onchange="calculateInwardedEggs()"
+                >
+              </div>
+
+              <!-- Ref No -->
+              <div>
+                <label for="refNo" class="block text-sm font-medium text-gray-700 mb-2">
+                  Ref No
+                </label>
+                <input
+                  type="text"
+                  id="refNo"
+                  name="refNo"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., REF-2024-0129"
+                >
+              </div>
+
+              <!-- Vehicle No -->
+              <div>
+                <label for="vehicleNo" class="block text-sm font-medium text-gray-700 mb-2">
+                  Vehicle No <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="vehicleNo"
+                  name="vehicleNo"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., MH-12-AB-1234"
+                  required
+                >
+              </div>
+
+              <!-- Driver Name -->
+              <div>
+                <label for="driverName" class="block text-sm font-medium text-gray-700 mb-2">
+                  Driver Name <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="driverName"
+                  name="driverName"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., Rajesh Kumar"
+                  required
+                >
+              </div>
+
+              <!-- Received By -->
+              <div>
+                <label for="receivedBy" class="block text-sm font-medium text-gray-700 mb-2">
+                  Received By <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="receivedBy"
+                  name="receivedBy"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="e.g., Suresh Patel"
+                  required
+                >
+              </div>
+
+              <!-- In Time -->
+              <div>
+                <label for="inTime" class="block text-sm font-medium text-gray-700 mb-2">
+                  In Time <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="time"
+                  id="inTime"
+                  name="inTime"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  required
+                >
+              </div>
+
+              <!-- Over Time -->
+              <div>
+                <label for="overTime" class="block text-sm font-medium text-gray-700 mb-2">
+                  Over Time
+                </label>
+                <input
+                  type="time"
+                  id="overTime"
+                  name="overTime"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                >
+              </div>
+
+              <!-- Remarks -->
+              <div>
+                <label for="remarks" class="block text-sm font-medium text-gray-700 mb-2">
+                  Remarks
+                </label>
+                <textarea
+                  id="remarks"
+                  name="remarks"
+                  rows="4"
+                  class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+                  placeholder="Additional notes or observations..."
+                ></textarea>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Computed Display Box -->
+          <div class="border-t border-gray-200 pt-8">
+            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-medium text-emerald-800 mb-1">Computed Total</p>
+                  <p class="text-xs text-emerald-600">Formula: (Trays × Eggs per Tray) − Test Eggs − Damage Eggs</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm text-emerald-700 mb-1">Inwarded Eggs</p>
+                  <p id="inwardedEggs" class="text-4xl font-bold text-emerald-900">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Bottom Action Bar -->
+      <div class="mt-6 bg-white/95 backdrop-blur-[2px] shadow-md ring-1 ring-gray-200 rounded-xl p-4 sticky bottom-6">
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-600">
+            <span class="text-red-600">*</span> Required fields
+          </div>
+          <div class="flex gap-3">
+            <button
+              type="button"
+              onclick="resetForm()"
+              class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition duration-200"
+            >
+              Reset
+            </button>
+            <button
+              type="button"
+              onclick="saveAndNew()"
+              class="px-6 py-3 border border-emerald-600 text-emerald-700 font-medium rounded-lg hover:bg-emerald-50 transition duration-200"
+            >
+              Save & New
+            </button>
+            <button
+              type="submit"
+              form="intakeForm"
+              class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-semibold rounded-lg shadow-md shadow-emerald-600/20 transition duration-200 shadow-sm hover:shadow-md"
+            >
+              Save Batch
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  // Calculate Inwarded Eggs
+  function calculateInwardedEggs() {
+    const trays = parseFloat(document.getElementById('transferTrays').value) || 0;
+    const eggsPerTray = parseFloat(document.getElementById('eggsPerTray').value) || 0;
+    const testEggs = parseFloat(document.getElementById('testEggs').value) || 0;
+    const damageEggs = parseFloat(document.getElementById('damageEggs').value) || 0;
+
+    const inwardedEggs = (trays * eggsPerTray) - testEggs - damageEggs;
+    document.getElementById('inwardedEggs').textContent = inwardedEggs >= 0 ? inwardedEggs.toLocaleString() : '0';
+  }
+
+  // Set current date on page load
+  window.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').value = today;
+
+    const now = new Date();
+    const currentTime = now.toTimeString().slice(0, 5);
+    document.getElementById('inTime').value = currentTime;
+  });
+
+  // Form submission
+  document.getElementById('intakeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Batch saved successfully!\n\nInwarded Eggs: ' + document.getElementById('inwardedEggs').textContent);
+  });
+
+  // Save and New
+  function saveAndNew() {
+    const form = document.getElementById('intakeForm');
+    if (form.checkValidity()) {
+      alert('Batch saved successfully!\n\nInwarded Eggs: ' + document.getElementById('inwardedEggs').textContent + '\n\nForm reset for new entry.');
+      resetForm();
+    } else {
+      form.reportValidity();
+    }
+  }
+
+  // Reset form
+  function resetForm() {
+    document.getElementById('intakeForm').reset();
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').value = today;
+    const now = new Date();
+    const currentTime = now.toTimeString().slice(0, 5);
+    document.getElementById('inTime').value = currentTime;
+    document.getElementById('eggsPerTray').value = '30';
+    document.getElementById('testEggs').value = '0';
+    document.getElementById('damageEggs').value = '0';
+    calculateInwardedEggs();
+  }
+</script>
+
+</body>
+</html>
